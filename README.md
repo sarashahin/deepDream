@@ -1,3 +1,5 @@
 # deepDream
 
 This code loads a pre-trained Inception V3 model, defines a function to read and preprocess an image, downsizes the image to make it easier to work with, and defines a function to calculate the loss for a given image and model. It also defines some utility functions to deprocess and display an image. Finally, it creates a feature extraction model using the specified layers of the loaded model.
+
+The Deep Dream algorithm enhances images by amplifying patterns that the model identifies as important. The calc_loss function is used to calculate the loss between the current image and the model's activations. The DeepDream class defines a __call__ function that uses gradient ascent to maximize the loss, thereby increasing the activation of important features. The run_deep_dream_simple function converts the input image to a tensor, and runs the deepdream function for a specified number of steps, each time updating the image to amplify important features. The final image is returned as a tensor. The function also displays the image after every 100 steps.
